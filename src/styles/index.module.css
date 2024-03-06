@@ -1,0 +1,13 @@
+.home {
+    height: 550px;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inputContainer {
+    display: flex;
+    justify-align: center;
+}
