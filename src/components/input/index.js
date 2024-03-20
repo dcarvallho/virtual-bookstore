@@ -1,10 +1,11 @@
 import React from 'react'
+import style from './style.module.css';
 
 const Input = () => {
   return (
-    <>
-        <input type='text' placeholder='Testando componente de input!'/>
-    </>
+    <div className={style.input}>
+        <input className={style.inputSearch} type='text' placeholder='Testando componente de input!'/>
+    </div>
   )
 }
 
