@@ -1,0 +1,19 @@
+.navbarMain {
+    color: white;
+    background-color: black;
+    height: 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 4rem;
+}
+
+.rightElements {
+    display: flex;
+    gap: 4rem;
+}
+
+.loginLogout > a {
+    text-decoration: none;
+    color: white;
+}
