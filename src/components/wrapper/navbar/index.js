@@ -1,8 +1,12 @@
 import { CORE_NAME } from "@/constants";
 import React from "react";
 import style from "./style.module.css";
+import { useSelector } from "react-redux";
 
 const Navbar = () => {
+  const { loginToggle } = useSelector((rootReducer)=> rootReducer.testeReducer)
+  console.log(loginToggle, "Testando redux");
+
   return (
     <>
       <nav className={style.navbarMain}>
