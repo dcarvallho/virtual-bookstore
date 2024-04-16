@@ -6,7 +6,6 @@ export const handleLoginToggle = (payload) => ({
     payload,
 });
 
-export const handleLogoutToggle = (payload) => ({
+export const handleLogoutToggle = () => ({
     type: LOGOUT,
-    payload,
 })

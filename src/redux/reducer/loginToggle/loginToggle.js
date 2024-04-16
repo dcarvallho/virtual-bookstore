@@ -7,8 +7,10 @@ const initialState = {
 
 const testeReducer = (state = initialState, action) => {
     switch(action.type) {
-      case LOGOUT:
+      case LOGIN:
         return { ...state, loginToggle: action.payload}
+      case LOGOUT:
+        return {...state, loginToggle: false}
         default:
           return state;
     }

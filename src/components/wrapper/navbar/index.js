@@ -2,20 +2,25 @@ import { CORE_NAME } from "@/constants";
 import React from "react";
 import style from "./style.module.css";
 import { useSelector, useDispatch } from "react-redux";
-import { handleLogoutToggle } from "@/redux/reducer/loginToggle/acions-type";
+import { handleLoginToggle, handleLogoutToggle } from "@/redux/reducer/loginToggle/acions-type";
 
 const Navbar = () => {
   const dispatch = useDispatch();
-  const { loginToggle } = useSelector(
+  const { loginToggle, userName } = useSelector(
     (rootReducer) => rootReducer.testeReducer
   );
   console.log(loginToggle, "Testando redux");
-//TODO: ajustar função e mudar lugar do evento
   const handleLogout = () => {
-    event.preventDefault();
-    dispatch(handleLogoutToggle(true));
+    dispatch(handleLogoutToggle(false));
   };
 
+  const handleLogin = () => {
+    dispatch(handleLoginToggle(true))
+  }
+
+  //TODO: Ajustar para que apareça o nome vindo do redux
+  //TODO: Criar novo reducer ou caso de uso
+  //TODO: Criar um input para busca de livros
   return (
     <>
       <nav className={style.navbarMain}>
@@ -23,16 +28,16 @@ const Navbar = () => {
         <div className={style.rightElements}>
           {loginToggle && (
             <>
-              <span>Olá, Davi!</span>
+              <span>{userName}</span>
             </>
           )}
           <div className={style.loginLogout}>
             {loginToggle ? (
-              <a href="" onClick={handleLogout}>
+              <button href="" onClick={handleLogout}>
                 Sair
-              </a>
+              </button>
             ) : (
-              <a href="">Login</a>
+              <button onClick={handleLogin}>Login</button>
             )}
           </div>
         </div>
