@@ -1,8 +1,7 @@
 .footerStyle {
     background-color: gray;
-    height: 400;
-    width: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
