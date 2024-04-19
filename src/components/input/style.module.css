@@ -1,9 +1,10 @@
-.input {
-    position: relative;
-    top: 89;
+.input{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
 }
 
 .inputSearch {
-    height: 36px;
-    width: 435px;
+    height: 4rem;
+    width: 20rem;
 }

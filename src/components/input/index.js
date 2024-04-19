@@ -1,12 +1,16 @@
-import React from 'react'
-import style from './style.module.css';
+import React from "react";
+import style from "./style.module.css";
 
-const Input = () => {
+const InputComponent = ({ placeHolder }) => {
   return (
     <div className={style.input}>
-        <input className={style.inputSearch} type='text' placeholder='Testando componente de input!'/>
+      <input
+        className={style.inputSearch}
+        type="text"
+        placeholder={placeHolder}
+      />
     </div>
-  )
-}
+  );
+};
 
-export default Input;
+export default InputComponent;

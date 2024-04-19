@@ -3,6 +3,7 @@ import React from "react";
 import style from "./style.module.css";
 import { useSelector, useDispatch } from "react-redux";
 import { handleLoginToggle, handleLogoutToggle } from "@/redux/reducer/loginToggle/acions-type";
+import ButtonComponent from "@/components/button";
 
 const Navbar = () => {
   const dispatch = useDispatch();
@@ -33,11 +34,11 @@ const Navbar = () => {
           )}
           <div className={style.loginLogout}>
             {loginToggle ? (
-              <button href="" onClick={handleLogout}>
+              <ButtonComponent onClick={handleLogout}>
                 Sair
-              </button>
+              </ButtonComponent>
             ) : (
-              <button onClick={handleLogin}>Login</button>
+              <ButtonComponent onClick={handleLogin}>Login</ButtonComponent>
             )}
           </div>
         </div>
