@@ -1,10 +1,15 @@
 import React from "react";
 import style from "./style.module.css";
+import classNames from "classnames";
 
-const ButtonComponent = ({ onClick, children }) => {
+const ButtonComponent = ({ onClick, children, buttonStyle }) => {
+
   return (
     <div>
-      <button onClick={onClick} className={style.buttonComponent}>
+      <button onClick={onClick} className={classNames({
+        [style.buttonComponent]: !buttonStyle,
+        [style.genericButton]: buttonStyle
+      })}>
         {children}
       </button>
     </div>

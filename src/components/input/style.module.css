@@ -1,7 +1,8 @@
 .input{
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
+    height: 500px;
 }
 
 .inputSearch {
