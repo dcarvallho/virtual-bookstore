@@ -1,44 +1,63 @@
+//https://www.googleapis.com/books/v1/volumes?q=harrypotter
 //Actions types
 export const ACTION_TYPES = {
-    FETCH_BOOKS_REQUEST: "FETCH_BOOKS_REQUEST",
-    FETCH_BOOKS_SUCCESS: "FETCH_BOOKS_SUCCESS",
-    FETCH_BOOKS_FAILURE: "FETCH_BOOKS_FAILURE"
-}
+  FETCH_BOOKS_REQUEST: "FETCH_BOOKS_REQUEST",
+  FETCH_BOOKS_SUCCESS: "FETCH_BOOKS_SUCCESS",
+  FETCH_BOOKS_FAILURE: "FETCH_BOOKS_FAILURE",
+};
 
-const initialState = {}
+const initialState = {
+  data: [],
+  loading: false,
+  error: null,
+};
 
-export const reducert = (state = initialState, action) => {
-    switch(action.type){
-        case ACTION_TYPES.FETCH_BOOKS_FAILURE:
-            return { ...state}
-        case ACTION_TYPES.FETCH_BOOKS_REQUEST:
-            return {...state, loading: true}
-        case ACTION_TYPES.FETCH_BOOKS_SUCCESS:
-            return {...state}
-        default:
-            return state;
-    }
-}
+export const reducer = (state = initialState, action) => {
+  switch (action.type) {
+    case ACTION_TYPES.FETCH_BOOKS_FAILURE:
+      return { ...state, loading: false, error: action.payload };
+    case ACTION_TYPES.FETCH_BOOKS_REQUEST:
+      return { ...state, error: null, loading: true };
+    case ACTION_TYPES.FETCH_BOOKS_SUCCESS:
+      return { ...state, loading: false, error: null, data: action.payload };
+    default:
+      return state;
+  }
+};
 
-//Action creator
+//Actions creators
 export const fetchUserRequest = () => {
-    return {
-        type: ACTION_TYPES.FETCH_BOOKS_REQUEST
-    }
-}
+  return {
+    type: ACTION_TYPES.FETCH_BOOKS_REQUEST,
+  };
+};
 
 export const fetchUserFailure = (payload) => {
-    return {
-        type: ACTION_TYPES.FETCH_BOOKS_FAILURE,
-        payload
-    }
-}
+  return {
+    type: ACTION_TYPES.FETCH_BOOKS_FAILURE,
+    payload,
+  };
+};
 
 export const fetchUserSuccess = (payload) => {
-    return {
-        type: ACTION_TYPES.FETCH_BOOKS_SUCCESS,
-        payload
-    }
-}
-//TODO: instalar redux-thunk e finalizar o redux para integração com o back
+  return {
+    type: ACTION_TYPES.FETCH_BOOKS_SUCCESS,
+    payload,
+  };
+};
 //Redux thunk
+export const fetchData = () => {
+  return async (dispatch) => {
+    dispatch(fetchUserRequest());
+    try {
+      const response = await fetch(
+        "//https://www.googleapis.com/books/v1/volumes?q=harrypotter"
+      );
+      const data = await response.json();
+
+      fetchUserRequest(data);
+    } catch (error) {
+      dispatch(fetchUserFailure(error.message));
+    }
+  };
+};
