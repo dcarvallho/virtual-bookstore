@@ -1,11 +1,14 @@
-.input{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 500px;
-}
-
 .inputSearch {
     height: 4rem;
     width: 20rem;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.inputSerachError {
+    height: 4rem;
+    width: 20rem;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid red;
 }

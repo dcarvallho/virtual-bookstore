@@ -46,12 +46,12 @@ export const fetchUserSuccess = (payload) => {
   };
 };
 //Redux thunk
-export const fetchData = () => {
+export const fetchData = (book) => {
   return async (dispatch) => {
     dispatch(fetchUserRequest());
     try {
       const response = await fetch(
-        "https://www.googleapis.com/books/v1/volumes?q=harrypotter"
+        `https://www.googleapis.com/books/v1/volumes?q=${book}`
       );
       const data = await response.json();
 

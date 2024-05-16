@@ -1,12 +1,16 @@
 import React, {useState} from "react";
 import style from "./style.module.css";
+import classNames from "classnames";
 
-const InputComponent = ({ placeHolder, value, handleSearchChange }) => {
+const InputComponent = ({ placeHolder, value, handleSearchChange, emptyValue = false }) => {
 
   return (
-    <div className={style.input}>
+    <div>
       <input
-        className={style.inputSearch}
+        className={classNames({
+          [style.inputSearch]: !emptyValue,
+          [style.inputSerachError]: emptyValue
+        })}
         type="text"
         value={value}
         onChange={handleSearchChange}
