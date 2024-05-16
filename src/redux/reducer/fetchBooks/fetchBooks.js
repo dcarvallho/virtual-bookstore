@@ -12,7 +12,7 @@ const initialState = {
   error: null,
 };
 
-export const reducer = (state = initialState, action) => {
+export const reducerBooks = (state = initialState, action) => {
   switch (action.type) {
     case ACTION_TYPES.FETCH_BOOKS_FAILURE:
       return { ...state, loading: false, error: action.payload };
@@ -51,11 +51,11 @@ export const fetchData = () => {
     dispatch(fetchUserRequest());
     try {
       const response = await fetch(
-        "//https://www.googleapis.com/books/v1/volumes?q=harrypotter"
+        "https://www.googleapis.com/books/v1/volumes?q=harrypotter"
       );
       const data = await response.json();
 
-      fetchUserRequest(data);
+      dispatch(fetchUserSuccess(data.items));
     } catch (error) {
       dispatch(fetchUserFailure(error.message));
     }
