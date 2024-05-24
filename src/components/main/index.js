@@ -23,6 +23,8 @@ const HomePage = () => {
     setInputValue(event.target.value);
   };
 
+  //TODO: criar useEffect para remover query do livro quando atualizar a página
+
   const handleSearchSubmit = (event) => {
     if (inputValue.trim().length === 0) {
       setEmptyInpunt(true);
@@ -66,6 +68,7 @@ const HomePage = () => {
               title={fetch.volumeInfo.title}
               publisher={fetch.volumeInfo.publisher}
               authors={fetch.volumeInfo.authors}
+              img={fetch.volumeInfo.imageLinks?.smallThumbnail}
             />
           ))}
         </div>
