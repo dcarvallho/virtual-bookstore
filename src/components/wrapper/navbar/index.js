@@ -18,10 +18,7 @@ const Navbar = () => {
   const handleLogin = () => {
     dispatch(handleLoginToggle(true))
   }
-
-  //TODO: Ajustar para que apareça o nome vindo do redux
-  //TODO: Criar novo reducer ou caso de uso
-  //TODO: Criar um input para busca de livros
+  //TODO: Criar tela de login com auth usando o redux
   return (
     <>
       <nav className={style.navbarMain}>

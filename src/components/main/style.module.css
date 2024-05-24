@@ -17,3 +17,8 @@
     gap: 3rem;
     padding: 2rem;
 }
+
+.warningEmpty {
+    color: red;
+    font-weight: bold;
+}

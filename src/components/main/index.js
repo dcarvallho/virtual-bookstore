@@ -1,5 +1,5 @@
 import { fetchData } from "@/redux/reducer/fetchBooks/fetchBooks";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import ButtonComponent from "../button";
 import InputComponent from "../input";
@@ -13,7 +13,9 @@ export const INPUT_PLACEHOLDER = "Digite aqui o livro desejado";
 const HomePage = () => {
   const dispatch = useDispatch();
   const router = useRouter();
+  const { book } = router.query;
   const [inputValue, setInputValue] = useState("");
+  const [emptyInput, setEmptyInpunt] = useState(false);
 
   const { data, loading, error } = useSelector((state) => state.reducerBooks);
 
@@ -22,17 +24,19 @@ const HomePage = () => {
   };
 
   const handleSearchSubmit = (event) => {
-    //TODO: mudar condição para quando o valor do input não existir ou não for encontrado
-    if (inputValue.length === 0) {
-      return error;
+    if (inputValue.trim().length === 0) {
+      setEmptyInpunt(true);
     } else {
+      setEmptyInpunt(false);
       router.push({
         pathname: location.pathname,
-        query: "result",
+        query: {
+          book: inputValue,
+        },
       });
-      event.preventDefault();
       dispatch(fetchData(inputValue));
     }
+    event.preventDefault();
   };
 
   return (
@@ -42,7 +46,11 @@ const HomePage = () => {
           value={inputValue}
           handleSearchChange={handleSearchChange}
           placeHolder={INPUT_PLACEHOLDER}
+          emptyValue={emptyInput}
         />
+        {emptyInput && (
+          <span className={style.warningEmpty}>Campo de busca vazio!</span>
+        )}
         <div>
           <ButtonComponent buttonStyle>Clique aqui!</ButtonComponent>
         </div>

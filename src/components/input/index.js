@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import style from "./style.module.css";
 import classNames from "classnames";
 
-const InputComponent = ({ placeHolder, value, handleSearchChange, emptyValue = false }) => {
+const InputComponent = ({ placeHolder, value, handleSearchChange, emptyValue }) => {
 
   return (
     <div>
