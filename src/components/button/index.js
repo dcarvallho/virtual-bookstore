@@ -2,11 +2,11 @@ import React from "react";
 import style from "./style.module.css";
 import classNames from "classnames";
 
-const ButtonComponent = ({ onClick, children, buttonStyle }) => {
+const ButtonComponent = ({ typeButton, onClick, children, buttonStyle }) => {
   return (
     <div>
       <button
-        type="submit"
+        type={typeButton}
         onClick={onClick}
         className={classNames({
           [style.buttonComponent]: !buttonStyle,
