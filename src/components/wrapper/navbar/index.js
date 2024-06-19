@@ -11,10 +11,14 @@ const Navbar = () => {
     router.push("/login");
   };
 
+  const handleBackPage = () => {
+    router.back();
+  }
+
   return (
     <>
       <nav className={style.navbarMain}>
-        <div>{CORE_NAME}</div>
+        <div onClick={handleBackPage}>{CORE_NAME}</div>
         <div className={style.loginLogout}>
           <ButtonComponent onClick={handleChangePage}>
             Login
