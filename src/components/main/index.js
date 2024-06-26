@@ -54,7 +54,9 @@ const HomePage = () => {
           <span className={style.warningEmpty}>Campo de busca vazio!</span>
         )}
         <div>
-          <ButtonComponent typeButton={"submit"} buttonStyle>Clique aqui!</ButtonComponent>
+          <ButtonComponent typeButton={"submit"} buttonStyle>
+            Clique aqui!
+          </ButtonComponent>
         </div>
       </form>
       <br></br>
@@ -71,7 +73,7 @@ const HomePage = () => {
               img={fetch.volumeInfo.imageLinks?.smallThumbnail}
             />
           ))}
-          //TODO:Criar componente de paginação localizado após os resultados
+          {/* TODO:Criar componente de paginação localizado após os resultados */}
         </div>
       </div>
     </div>
