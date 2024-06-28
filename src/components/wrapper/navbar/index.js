@@ -3,13 +3,15 @@ import React from "react";
 import style from "./style.module.css";
 import ButtonComponent from "@/components/button";
 import { useRouter } from "next/router";
-import Link from "next/link";
-
+import { useDispatch, UseDispatch } from "react-redux";
+import { fetchUserClear } from "@/redux/reducer/fetchBooks/fetchBooks";
 const Navbar = () => {
   const router = useRouter();
+  const dispatch = useDispatch();
 
   const handleChangePage = () => {
     router.push("/login");
+    dispatch(fetchUserClear());
   };
 
   //TODO:Realizar condição para visualização dos resultados ao ir para homepage

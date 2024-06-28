@@ -4,6 +4,7 @@ export const ACTION_TYPES = {
   FETCH_BOOKS_REQUEST: "FETCH_BOOKS_REQUEST",
   FETCH_BOOKS_SUCCESS: "FETCH_BOOKS_SUCCESS",
   FETCH_BOOKS_FAILURE: "FETCH_BOOKS_FAILURE",
+  FETCH_BOOKS_CLEAR: "FETCH_BOOKS_CLEAR",
 };
 
 const initialState = {
@@ -20,6 +21,8 @@ export const reducerBooks = (state = initialState, action) => {
       return { ...state, error: null, loading: true };
     case ACTION_TYPES.FETCH_BOOKS_SUCCESS:
       return { ...state, loading: false, error: null, data: action.payload };
+    case ACTION_TYPES.FETCH_BOOKS_CLEAR:
+      return {...state, loading: false, error: null}
     default:
       return state;
   }
@@ -45,6 +48,12 @@ export const fetchUserSuccess = (payload) => {
     payload,
   };
 };
+
+export const fetchUserClear =() => {
+  return {
+    type: ACTION_TYPES.FETCH_BOOKS_CLEAR,
+  }
+}
 //Redux thunk
 export const fetchData = (book) => {
   return async (dispatch) => {
