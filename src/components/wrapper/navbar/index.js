@@ -3,8 +3,9 @@ import React from "react";
 import style from "./style.module.css";
 import ButtonComponent from "@/components/button";
 import { useRouter } from "next/router";
-import { useDispatch, UseDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { fetchUserClear } from "@/redux/reducer/fetchBooks/fetchBooks";
+
 const Navbar = () => {
   const router = useRouter();
   const dispatch = useDispatch();

@@ -23,8 +23,6 @@ const HomePage = () => {
     setInputValue(event.target.value);
   };
 
-  //TODO: criar useEffect para remover query do livro quando atualizar a página
-
   const handleSearchSubmit = (event) => {
     if (inputValue.trim().length === 0) {
       setEmptyInpunt(true);
@@ -40,6 +38,12 @@ const HomePage = () => {
     }
     event.preventDefault();
   };
+
+  //TODO: realizar effect para persirstir os dados do resultado da busca
+  useEffect(() => {
+    
+  }, [third])
+  
 
   return (
     <div className={style.mainContent}>
@@ -60,7 +64,8 @@ const HomePage = () => {
         </div>
       </form>
       <br></br>
-      <div>
+      {/* TODO: Efetuar condição de mostrar resultado apenas quando a query.book for true -> book && */}
+      {<div>
         {loading && <LoadingComponent />}
         {error && <span>Erro na requisição</span>}
         <div className={style.cardResult}>
@@ -75,7 +80,7 @@ const HomePage = () => {
           ))}
           {/* TODO:Criar componente de paginação localizado após os resultados */}
         </div>
-      </div>
+      </div>}
     </div>
   );
 };
