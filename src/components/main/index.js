@@ -40,9 +40,9 @@ const HomePage = () => {
   };
 
   //TODO: realizar effect para persirstir os dados do resultado da busca
-  useEffect(() => {
+  // useEffect(() => {
     
-  }, [third])
+  // }, [third])
   
 
   return (

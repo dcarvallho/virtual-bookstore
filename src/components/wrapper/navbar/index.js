@@ -1,8 +1,8 @@
-import { CORE_NAME } from "@/constants";
+// import { CORE_NAME } from "@/constants";
 import React from "react";
 import style from "./style.module.css";
 import ButtonComponent from "@/components/button";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import { useDispatch } from "react-redux";
 import { fetchUserClear } from "@/redux/reducer/fetchBooks/fetchBooks";
 
@@ -22,7 +22,7 @@ const Navbar = () => {
     <>
       <nav className={style.navbarMain}>
         {/* <div onClick={goToHomePage}>{CORE_NAME}</div> */}
-        <a href="/">{CORE_NAME}</a>
+        <a href="/">Virtual BookStore</a>
         <div className={style.loginLogout}>
           <ButtonComponent onClick={handleChangePage}>Login</ButtonComponent>
         </div>
