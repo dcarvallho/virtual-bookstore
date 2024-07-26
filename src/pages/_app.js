@@ -1,3 +1,4 @@
+import React from 'react';
 import WrapperComponent from "@/components/wrapper";
 import "@/styles/globals.css";
 
