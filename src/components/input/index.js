@@ -9,7 +9,7 @@ const InputComponent = ({ placeHolder, value, handleSearchChange, emptyValue }) 
       <input
         className={classNames({
           [style.inputSearch]: !emptyValue,
-          [style.inputSerachError]: emptyValue
+          [style.inputSearchError]: emptyValue
         })}
         type="text"
         value={value}

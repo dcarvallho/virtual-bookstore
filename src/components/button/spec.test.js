@@ -2,7 +2,6 @@ import React from "react";
 import "@testing-library/jest-dom";
 import ButtonComponent from ".";
 import { fireEvent, render, screen } from "@testing-library/react";
-import jestConfig from "../../../jest.config";
 
 const props = {
     typeButton: "submit",
