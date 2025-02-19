@@ -1,10 +1,11 @@
-// import { CORE_NAME } from "@/constants";
+'use client'
 import React from "react";
 import style from "./style.module.css";
 import ButtonComponent from "@/components/button";
 import { useRouter } from "next/navigation";
 import { useDispatch } from "react-redux";
 import { fetchUserClear } from "@/redux/reducer/fetchBooks/fetchBooks";
+import Link from "next/link";
 
 const Navbar = () => {
   
@@ -23,7 +24,7 @@ const Navbar = () => {
     <>
       <nav className={style.navbarMain}>
         {/* <div onClick={goToHomePage}>{CORE_NAME}</div> */}
-        <a href="/">Virtual BookStore</a>
+        <div>Virtual BookStore</div>
         <div className={style.loginLogout}>
           <ButtonComponent onClick={handleChangePage}>Login</ButtonComponent>
         </div>
