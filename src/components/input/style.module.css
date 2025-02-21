@@ -1,8 +1,10 @@
 .inputSearch {
     height: 4rem;
-    width: 20rem;
-    border-radius: 8px;
-    text-align: center;
+    width: 34rem;
+    border-radius: 2.4rem;
+    text-align: start;
+    padding-left: 2rem;
+    border: transparent;
 }
 
 .inputSearchError {
@@ -10,5 +12,5 @@
     width: 20rem;
     border-radius: 8px;
     text-align: center;
-    border: 2px solid red;
+    border: 1.4px solid red;
 }

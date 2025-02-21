@@ -57,13 +57,7 @@ const HomePage = () => {
         {emptyInput && (
           <span className={style.warningEmpty}>Campo de busca vazio!</span>
         )}
-        <div>
-          <ButtonComponent typeButton={"submit"}>
-            Clique aqui!
-          </ButtonComponent>
-        </div>
       </form>
-      <br></br>
       {/* TODO: Efetuar condição de mostrar resultado apenas quando a query.book for true -> book && */}
       {<div>
         {loading && <LoadingComponent />}

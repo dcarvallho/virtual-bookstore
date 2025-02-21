@@ -1,15 +1,12 @@
-'use client'
-import React, {useState} from "react";
+import React from "react";
 import style from "./style.module.css";
 import classNames from "classnames";
 
 const InputComponent = ({ placeHolder, value, handleSearchChange, emptyValue }) => {
 
   return (
-    <div>
       <input
-        className={classNames({
-          [style.inputSearch]: !emptyValue,
+        className={classNames(style.inputSearch,{
           [style.inputSearchError]: emptyValue
         })}
         type="text"
@@ -17,7 +14,6 @@ const InputComponent = ({ placeHolder, value, handleSearchChange, emptyValue }) 
         onChange={handleSearchChange}
         placeholder={placeHolder}
       />
-    </div>
   );
 };
 
