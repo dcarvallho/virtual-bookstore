@@ -58,7 +58,7 @@ const HomePage = () => {
           <span className={style.warningEmpty}>Campo de busca vazio!</span>
         )}
         <div>
-          <ButtonComponent typeButton={"submit"} buttonStyle>
+          <ButtonComponent typeButton={"submit"}>
             Clique aqui!
           </ButtonComponent>
         </div>

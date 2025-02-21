@@ -5,7 +5,6 @@ import ButtonComponent from "@/components/button";
 import { useRouter } from "next/navigation";
 import { useDispatch } from "react-redux";
 import { fetchUserClear } from "@/redux/reducer/fetchBooks/fetchBooks";
-import Link from "next/link";
 
 const Navbar = () => {
   
@@ -23,9 +22,8 @@ const Navbar = () => {
   return (
     <>
       <nav className={style.navbarMain}>
-        {/* <div onClick={goToHomePage}>{CORE_NAME}</div> */}
-        <div>Virtual BookStore</div>
         <div className={style.loginLogout}>
+          <ButtonComponent transparent>Sign Up</ButtonComponent>
           <ButtonComponent onClick={handleChangePage}>Login</ButtonComponent>
         </div>
       </nav>

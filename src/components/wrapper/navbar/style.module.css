@@ -1,19 +1,15 @@
 .navbarMain {
-    color: transparent;
-    background-color: black;
+    background-color: transparent;
     height: 4rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     padding: 0 4rem;
-}
-
-.rightElements {
     display: flex;
-    gap: 4rem;
+    justify-content: flex-end;
+    margin-top: 1.6rem;
 }
 
-.loginLogout > a {
+.loginLogout {
     text-decoration: none;
+    display: flex;
     color: white;
+    gap: 1rem;
 }

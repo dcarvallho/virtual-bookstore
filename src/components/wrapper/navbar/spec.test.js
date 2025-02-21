@@ -30,8 +30,7 @@ describe('<Navbar />', () => {
         </Provider>
       );
 
-    const appName = screen.getByText(/Virtual Bookstore/i);
-    expect(appName).toBeInTheDocument();
+    expect(screen.getByRole('button', {name: /Sign Up/i})).toBeInTheDocument();
   });
 
   test('should render login button', async () => {
