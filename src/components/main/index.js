@@ -1,7 +1,6 @@
-import { fetchData } from '@/redux/reducer/fetchBooks/fetchBooks'
-import React, { useState, useEffect } from 'react';
+import { fetchData } from '@/redux/reducer/fetchBooks/fetchBooks';
+import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import ButtonComponent from '../button';
 import InputComponent from '../input';
 import LoadingComponent from '../loading';
 import ResultCard from '../result';
@@ -13,7 +12,6 @@ export const INPUT_PLACEHOLDER = 'Digite aqui o livro desejado';
 const HomePage = () => {
     const dispatch = useDispatch();
     const router = useRouter();
-    const { book } = router.query;
     const [inputValue, setInputValue] = useState('');
     const [emptyInput, setEmptyInpunt] = useState(false);
 
