@@ -37,11 +37,6 @@ const HomePage = () => {
         event.preventDefault();
     };
 
-    //TODO: realizar effect para persirstir os dados do resultado da busca
-    // useEffect(() => {
-
-    // }, [third])
-
     return (
         <div className={style.mainContent}>
             <form onSubmit={handleSearchSubmit} className={style.form}>

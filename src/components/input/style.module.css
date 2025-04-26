@@ -1,3 +1,13 @@
+.inputContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.imgBooks {
+    width: 26rem;
+    align-self: center;
+}
+
 .inputSearch {
     height: 4rem;
     width: 34rem;
@@ -5,6 +15,11 @@
     text-align: start;
     padding-left: 2rem;
     border: transparent;
+    font-size: larger;
+}
+
+.inputSearch:focus {
+    outline: none;
 }
 
 .inputSearchError {

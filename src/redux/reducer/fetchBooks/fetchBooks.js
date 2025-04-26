@@ -1,5 +1,4 @@
 //https://www.googleapis.com/books/v1/volumes?q=harrypotter
-//Actions types
 export const ACTION_TYPES = {
     FETCH_BOOKS_REQUEST: 'FETCH_BOOKS_REQUEST',
     FETCH_BOOKS_SUCCESS: 'FETCH_BOOKS_SUCCESS',
@@ -13,10 +12,10 @@ const initialState = {
     error: null,
 };
 
-export const reducerBooks = (state = initialState, action) => {
-    switch (action.type) {
+export const reducerBooks = (state = initialState, { type, payload }) => {
+    switch (type) {
         case ACTION_TYPES.FETCH_BOOKS_FAILURE:
-            return { ...state, loading: false, error: action.payload };
+            return { ...state, loading: false, error: payload };
         case ACTION_TYPES.FETCH_BOOKS_REQUEST:
             return { ...state, error: null, loading: true };
         case ACTION_TYPES.FETCH_BOOKS_SUCCESS:
@@ -24,7 +23,7 @@ export const reducerBooks = (state = initialState, action) => {
                 ...state,
                 loading: false,
                 error: null,
-                data: action.payload,
+                data: payload,
             };
         case ACTION_TYPES.FETCH_BOOKS_CLEAR:
             return { ...state, loading: false, error: null };
@@ -33,7 +32,6 @@ export const reducerBooks = (state = initialState, action) => {
     }
 };
 
-//Actions creators
 export const fetchUserRequest = () => {
     return {
         type: ACTION_TYPES.FETCH_BOOKS_REQUEST,
@@ -59,7 +57,7 @@ export const fetchUserClear = () => {
         type: ACTION_TYPES.FETCH_BOOKS_CLEAR,
     };
 };
-//Redux thunk
+
 export const fetchData = (book) => {
     return async (dispatch) => {
         dispatch(fetchUserRequest());
