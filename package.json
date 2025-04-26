@@ -15,7 +15,7 @@
             "prettier --check",
             "eslint"
         ],
-    "*.css": "prettier --check"
+        "*.css": "prettier --check"
     },
     "dependencies": {
         "next": "13.5.6",
@@ -44,6 +44,7 @@
         "jest-environment-jsdom": "^29.7.0",
         "jest-next-dynamic": "^1.0.1",
         "lint-staged": "^15.5.1",
+        "next-pwa": "^5.6.0",
         "next-router-mock": "^0.9.13",
         "prettier": "^3.5.3",
         "react-redux": "^9.1.0",
