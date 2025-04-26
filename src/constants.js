@@ -1,1 +1,1 @@
-export const CORE_NAME = "Virtual BookStore";
+export const CORE_NAME = 'Virtual BookStore';

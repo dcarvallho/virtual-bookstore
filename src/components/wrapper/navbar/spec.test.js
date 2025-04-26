@@ -10,7 +10,7 @@ import Navbar from '.';
 
 const mockPush = jest.fn();
 jest.mock('next/navigation', () => ({
-        useRouter: jest.fn(() => ({
+    useRouter: jest.fn(() => ({
         push: mockPush,
         query: { code: '123' },
         pathname: '/current-path',
@@ -23,26 +23,28 @@ const store = mockStore({
 });
 
 describe('<Navbar />', () => {
-  test('should render properly', () => {
-    render(
-        <Provider store={store}>
-          <Navbar />
-        </Provider>
-      );
+    test('should render properly', () => {
+        render(
+            <Provider store={store}>
+                <Navbar />
+            </Provider>,
+        );
 
-    expect(screen.getByRole('button', {name: /Sign Up/i})).toBeInTheDocument();
-  });
+        expect(
+            screen.getByRole('button', { name: /Sign Up/i }),
+        ).toBeInTheDocument();
+    });
 
-  test('should render login button', async () => {
-    render(
-        <Provider store={store}>
-          <Navbar />
-        </Provider>
-      );
+    test('should render login button', async () => {
+        render(
+            <Provider store={store}>
+                <Navbar />
+            </Provider>,
+        );
 
-    const loginButton = screen.getByRole('button', {name: /Login/i});
-    expect(loginButton).toBeInTheDocument();
-    await userEvent.click(loginButton);
-    await waitFor(() => expect(mockPush).toHaveBeenCalledWith('/login'));
-  })
+        const loginButton = screen.getByRole('button', { name: /Login/i });
+        expect(loginButton).toBeInTheDocument();
+        await userEvent.click(loginButton);
+        await waitFor(() => expect(mockPush).toHaveBeenCalledWith('/login'));
+    });
 });
